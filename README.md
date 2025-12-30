@@ -105,7 +105,17 @@ A website for users to see the playlist and request songs and for Admins to mana
 /api/
 │
 ├─ Program.cs
-└─ /storedSettings/
-    ├── location1Settings.json
-    └── location2Settings.json
+└── /locations/
+    ├── /location1/
+    │   ├── whitelist.json
+    │   ├── blacklist.json
+    │   ├── requests.json
+    │   ├── users.json         # Also determines if user is admin and any auth token
+    │   └── location1Settings.json
+    └── /location2/
+        ├── whitelist.json
+        ├── blacklist.json
+        ├── requests.json
+        ├── users.json         # Also determines if user is admin and any auth token
+        └── location2Settings.json
 ```
