@@ -27,9 +27,15 @@ function removeLocationSelection () {
     form.remove();
 }
 
+function showLocationPage () {
+  const locationPage = document.getElementById("locationPage");
+  locationPage.classList.remove("hidden");
+}
+
 buildHeader(locationName);
 if(checkLocation())
 {
     removeLocationSelection();
     addLocationStylesheet();
+    showLocationPage();
 }

@@ -1,9 +1,14 @@
 :root{
     --primary: black;
+    font-family: "Rye", serif;
+    h1 {
+        letter-spacing: 0.1em
+    }
 }
 
 @import "tailwindcss";
 
 @theme {
-    --color-primary: var(--primary)
+    /* --font-display: "Rye", serif; */
+    --color-primary: var(--primary);
 }
