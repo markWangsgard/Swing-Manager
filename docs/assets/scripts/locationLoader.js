@@ -6,16 +6,24 @@ function getQueryParam(param) {
 }
 const locationName = getQueryParam("location");
 
-function checkLocation () {
+function checkLocation() {
   if (!locationName || !/^[a-zA-Z0-9_-]+$/.test(locationName)) {
     console.warn("Invalid or missing location parameter");
+
+    const currentUrl = new URL(window.location.href);
+    const newPath = currentUrl.pathname.includes("docs")
+      ? `/docs/index.html`
+      : `/index.html;`;
+    currentUrl.pathname = newPath;
+
+    window.location.assign(currentUrl.toString());
+
     return false;
-  }  
+  }
   return true;
 }
 
 function addLocationStylesheet() {
-  
   const link = document.createElement("link");
   link.rel = "stylesheet";
   link.href = `./locations/${locationName}/style.css`;
@@ -24,7 +32,6 @@ function addLocationStylesheet() {
 
 buildHeader(locationName);
 buildFooter();
-if(checkLocation())
-{
-    addLocationStylesheet();
+if (checkLocation()) {
+  addLocationStylesheet();
 }

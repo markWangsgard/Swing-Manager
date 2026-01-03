@@ -7,6 +7,5 @@ const dropdownElement = document.getElementById("choseLocation");
             currentUrl.pathname = newPath;
             params.set("location", dropdownElement.value);
 
-            console.log(currentUrl);
             window.location.assign(currentUrl.toString());
           });
