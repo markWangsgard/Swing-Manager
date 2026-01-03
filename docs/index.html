@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/styles/output.css" rel="stylesheet" />
+    <script type="module" src="assets/scripts/locationLoader.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <main id="main">
+      <form action="submit" class="flex flex-col items-center" id="form">
+        <label class="font-bold text-2xl mt-2" for="choseLocation"
+          >Which location are you at?</label
+        >
+        <select
+          name="choseLocation"
+          id="choseLocation"
+          class="w-fit m-3 p-2 border rounded-md"
+        >
+          <option value="" disabled selected hidden>Choose Location</option>
+          <option value="Snow-College">Snow College</option>
+          <option value="The-Barn">The Barn</option>
+        </select>
+        <script>
+          const dropdownElement = document.getElementById("choseLocation");
+          dropdownElement.addEventListener("input", (e) => {
+            e.preventDefault();
+            const currentUrl = new URL(window.location.href);
+            const params = currentUrl.searchParams;
+
+            params.set("location", dropdownElement.value);
+
+            console.log(currentUrl);
+            window.location.assign(currentUrl.toString());
+          });
+        </script>
+      </form>
+    </main>
+  </body>
+</html>
