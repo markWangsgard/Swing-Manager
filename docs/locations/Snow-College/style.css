@@ -1,6 +1,6 @@
 :root
 {
-    --primary: rgb(10, 70, 10);
+    --primary: rgb(10, 21, 70);
 }
 
 @import "tailwindcss";

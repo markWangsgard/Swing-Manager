@@ -1,4 +1,4 @@
-import { buildHeader } from "./buildElements.js";
+import { buildFooter, buildHeader } from "./buildElements.js";
 
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -22,20 +22,9 @@ function addLocationStylesheet() {
   document.head.appendChild(link);
 }
 
-function removeLocationSelection () {
-    const form = document.getElementById("form");
-    form.remove();
-}
-
-function showLocationPage () {
-  const locationPage = document.getElementById("locationPage");
-  locationPage.classList.remove("hidden");
-}
-
 buildHeader(locationName);
+buildFooter();
 if(checkLocation())
 {
-    removeLocationSelection();
     addLocationStylesheet();
-    showLocationPage();
 }

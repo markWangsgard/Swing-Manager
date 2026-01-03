@@ -1,5 +1,7 @@
 :root{
-    --primary: black;
+    --primary: rgb(13, 48, 20);
+    --primary-light: color-mix(in srgb, var(--primary), white 20%);
+    --primary-dark: color-mix(in srgb, var(--primary), black 20%);
     font-family: "Rye", serif;
     h1 {
         letter-spacing: 0.1em
@@ -9,6 +11,7 @@
 @import "tailwindcss";
 
 @theme {
-    /* --font-display: "Rye", serif; */
     --color-primary: var(--primary);
+    --color-primary-light: var(--primary-light);
+    --color-primary-dark: var(--primary-dark);
 }

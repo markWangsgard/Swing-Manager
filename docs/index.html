@@ -13,10 +13,13 @@
     />
 
     <link href="./assets/styles/output.css" rel="stylesheet" />
-    <script type="module" src="assets/scripts/locationLoader.js"></script>
+    <!-- <script type="module" src="assets/scripts/locationLoader.js"></script> -->
+    <script type="module" src="assets/scripts/ui/index.js"></script>
   </head>
   <body>
-    <header></header>
+    <header class="bg-primary text-center p-3">
+      <h1 class="text-3xl font-bold text-white p-3">Swing Requests</h1>
+    </header>
     <main id="main">
       <form action="submit" class="flex flex-col items-center" id="form">
         <label class="font-bold text-2xl mt-2" for="choseLocation"
@@ -31,19 +34,6 @@
           <option value="Snow-College">Snow College</option>
           <option value="The-Barn">The Barn</option>
         </select>
-        <script>
-          const dropdownElement = document.getElementById("choseLocation");
-          dropdownElement.addEventListener("input", (e) => {
-            e.preventDefault();
-            const currentUrl = new URL(window.location.href);
-            const params = currentUrl.searchParams;
-
-            params.set("location", dropdownElement.value);
-
-            console.log(currentUrl);
-            window.location.assign(currentUrl.toString());
-          });
-        </script>
       </form>
       <div class="hidden" id="locationPage">
         <h2>Content to go here</h2>
