@@ -1,0 +1,1 @@
+public enum ListMode {disabled, whitelist, blacklist}

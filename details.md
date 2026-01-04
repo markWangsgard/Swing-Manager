@@ -51,9 +51,11 @@
 <!-- * Logo -->
 * Unsaved settings
 ### Server
+* if it is in a code block, it has been created. I still need to go through and make defaults or initialize in constructors for each class
+```
 * Location
-  * Id or Name
-    * string Possibly Dictionary Key
+  * locationPath
+    * string
   * Settings
     * Settings
   * Song Cache
@@ -68,6 +70,10 @@
       * String
     * RequestedAt
       * DateTime
+  * RequestCount(string songId)
+  * RequestCount(string userId)
+  * UpdateRequests()?
+    * Ran when settings changed
   * Users
     * Dictionary Key (string)
       * User Id
@@ -83,8 +89,6 @@
     * string
   * Artist
     * string
-  * RequestCount()
-    * I'm not sure if this will be a function or an int. It might update with each request, or it might be pulled from 
 * Settings
   * Theme Colors
     * Color - string
@@ -109,8 +113,6 @@
   * Blacklist
     * Enabled - bool
     * Songs - Json File
-  * UpdateRequests()?
-    * Ran when settings changed
 * PlaylistData
   * Id
     * string
@@ -125,7 +127,6 @@
     * bool
   * AdminData
     * AdminData
-  * GetRequests()?
 * AdminData
   * email
     * string
@@ -137,6 +138,7 @@
     * string
   * Access Token Expires at
     * DateTime
+```
 * Spotify Api Manager (Double check all these if they need uri or id)
   * getApiAccessToken()
   * login()
@@ -161,11 +163,13 @@
   * Previous(string accessToken)
   * Next(string accessToken)
   * Seek(string accessToken, string songUri, int progress_ms)?
+```
 * LocationManager
   * Dictionary Key
     * Id/Name
   * Dictionary Value
     * Location
+```
 
 ## File Setup
 ```
