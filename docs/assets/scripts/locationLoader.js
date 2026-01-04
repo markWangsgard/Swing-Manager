@@ -13,7 +13,7 @@ function checkLocation() {
     const currentUrl = new URL(window.location.href);
     const newPath = currentUrl.pathname.includes("docs")
       ? `/docs/index.html`
-      : `/index.html;`;
+      : `Swing-Manager/index.html;`;
     currentUrl.pathname = newPath;
 
     window.location.assign(currentUrl.toString());

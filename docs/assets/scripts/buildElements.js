@@ -68,7 +68,7 @@ export function buildFooter() {
     const currentUrl = new URL(window.location.href);
     const newPath = currentUrl.pathname.includes("docs")
       ? `/docs/now-playing.html`
-      : `/now-playing.html;`;
+      : `Swing-Manager/now-playing.html;`;
     currentUrl.pathname = newPath;
 
     window.location.assign(currentUrl.toString());
@@ -78,7 +78,7 @@ export function buildFooter() {
     const currentUrl = new URL(window.location.href);
     const newPath = currentUrl.pathname.includes("docs")
       ? `/docs/request-songs.html`
-      : `/request-songs.html;`;
+      : `Swing-Manager/request-songs.html;`;
     currentUrl.pathname = newPath;
 
     window.location.assign(currentUrl.toString());
