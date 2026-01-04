@@ -20,7 +20,7 @@ export function buildHeader(locationName) {
   headerElement.appendChild(locationPhotoElement);
   //   headerElement.appendChild(locationNameElement);
 }
-export function buildFooter() {
+export function buildUserFooter() {
   const footerElement = document.getElementsByTagName("footer")[0];
   footerElement.classList = "bg-primary flex justify-evenly items-end p-3";
 

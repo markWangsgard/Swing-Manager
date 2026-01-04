@@ -13,11 +13,11 @@ A website for users to see the playlist and request songs and for Admins to mana
 * Settings
 
 ## Todo:
-* [ ] User Nav Bar
+* [x] User Nav Bar
 * [ ] Admin Nav Bar
-* [ ] Admin Select Playlist bar
-  * [ ] View all playlists
-  * [ ] Available on all admin pages
+<!-- * [ ] Admin Select Playlist bar -->
+  <!-- * [ ] View all playlists -->
+  <!-- * [ ] Available on all admin pages -->
 * [ ] Now Playing
   * [ ] See song progress
   * [ ] View next song(s)
@@ -65,7 +65,112 @@ A website for users to see the playlist and request songs and for Admins to mana
 <!-- * Logo -->
 * Unsaved settings
 ### Server
-* Basically everything 😅
+* Location
+  * Settings
+    * Theme Colors
+      * Color - string
+    * Limit visible next songs
+      * Enabled - bool
+      * Limit - int
+    * Highlight Line Dances
+      * Enabled - bool
+      * Songs - Json File
+    * Highlight Custom Songs
+      * Enabled - bool
+      * Name - string
+      * Songs - Json File
+    * Limit Requests
+      * Enabled - bool
+      * Limit - int
+    * Allow Repeats
+      * Enabled - bool
+    * Whitelist
+      * Enabled - bool
+      * Songs - Json File
+    * Blacklist
+      * Enabled - bool
+      * Songs - Json File
+    * UpdateRequests()?
+      * Ran when settings changed
+  * Song Cache
+    * Quick and Easy Song storage
+    * Each that is requested gets stored here. 
+    * If Song is missing it is requested and added\
+      *   List<SongData>
+  * Requests
+    * UserId
+      * String
+    * SongId
+      * String
+    * RequestedAt
+      * DateTime
+  * Users
+    * Dictionary Key (string)
+      * User Id
+    * Dictionary Value
+      * UserData
+  * Allowed Emails for Admins
+* SongData
+  * Id
+    * string
+  * uri
+    * string
+  * imgUrl
+    * string
+  * Artist
+    * string
+  * RequestCount()
+    * I'm not sure if this will be a function or an int. It might update with each request, or it might be pulled from 
+* PlaylistData
+  * Id
+    * string
+  * uri
+    * string
+  * imgUrl
+    * string
+  * OwnerName
+    * string
+* UserData
+  * isAdmin
+    * bool
+  * AdminData
+    * AdminData
+  * GetRequests()?
+* AdminData
+  * email
+    * string
+  * user name
+    * string
+  * Access Token
+    * string
+  * Refresh Token
+    * string
+  * Access Token Expires at
+    * DateTime
+* Spotify Api Manager (Double check all these if they need uri or id)
+  * getApiAccessToken()
+  * login()
+  * getSong(string id)
+  * searchSongs(string query)
+  * getPlaylists(string accessToken)
+  * getPlaylist(string accessToken, string playlistUri)
+  * addSongToPlaylist(string accessToken, string playlistUri, string songUri)
+  * moveSongInPlaylist(string accessToken, string playlistUri, string songUri, int currentPosition, int newPosition)
+  * createPlaylist(string accessToken, string name, List<string> SongUris)
+  * renamePlaylist(string accessToken, string playlistUri, string name)
+  * updateQueue(string accessToken, string playlistUri)
+    * To be run from moveSongInPlaylist()/addSongToPlaylist()
+    * gets playback state
+    * Finds Current Playlist, Current Song, item.duration_ms and item.progress_ms
+    * If Playlists are different, return. Do nothing.
+    * if Playlists are the same, get next song and calculate time to end of song.
+    * trigger start/resume 500ms to 1000ms before end of song
+    * Play next song.
+  * Play(string accessToken, string uri)
+  * Pause(string accessToken)
+  * Previous(string accessToken)
+  * Next(string accessToken)
+  * Seek(string accessToken, string songUri, int progress_ms)?
 
 ## File Setup
 ```

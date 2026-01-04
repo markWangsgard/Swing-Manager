@@ -1,4 +1,4 @@
-import { buildFooter, buildHeader } from "./buildElements.js";
+import { buildUserFooter, buildHeader } from "./buildElements.js";
 
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -31,7 +31,7 @@ function addLocationStylesheet() {
 }
 
 buildHeader(locationName);
-buildFooter();
+buildUserFooter();
 if (checkLocation()) {
   addLocationStylesheet();
 }
