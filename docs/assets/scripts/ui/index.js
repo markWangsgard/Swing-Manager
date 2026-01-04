@@ -5,7 +5,7 @@ dropdownElement.addEventListener("input", (e) => {
   const params = currentUrl.searchParams;
   const newPath = currentUrl.pathname.includes("docs")
     ? `/docs/now-playing.html`
-    : `/Swing-Manager/now-playing.html;`;
+    : `/Swing-Manager/now-playing.html`;
   currentUrl.pathname = newPath;
   params.set("location", dropdownElement.value);
 
