@@ -1,3 +1,7 @@
+## Ideas to add
+* Allow search to include playlist
+  * Can be grayed out or not visible
+
 ## Todo:
 * [x] User Nav Bar
 * [ ] Admin Nav Bar
