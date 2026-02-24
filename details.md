@@ -184,11 +184,9 @@
 │   │   ├── /images/           # Images used for this location
 │   │   │   ├── logo.png       # Logo for Location 1
 │   │   │   └── ...
-│   │   ├── style.css          # Custom styles for Location 1
 │   │   └── config.json        # Location 1 specific settings (number of requests, etc.)
 │   ├── /location2/            # Folder for Location 2
 │   ├── /images/               # Images used for this location
-│   │   ├── style.css          # Custom styles for Location 2
 │   │   ├── logo.png           # Logo for Location 2
 │   │   └── config.json        # Location 2 specific settings
 │   └── ...
