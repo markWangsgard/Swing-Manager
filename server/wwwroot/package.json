@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:css": "npx @tailwindcss/cli -i ./assets/styles/style.css -o ./assets/styles/output.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./assets/styles/style.css -o ./assets/styles/output.css --minify --watch"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",

@@ -65,23 +65,12 @@ export function buildUserFooter() {
 
   // Event Listeners
   nowPlayingDivElement.addEventListener("click", () => {
-    const currentUrl = new URL(window.location.href);
-    const newPath = currentUrl.pathname.includes("docs")
-      ? `/docs/now-playing.html`
-      : `/Swing-Manager/now-playing.html`;
-    currentUrl.pathname = newPath;
 
-    window.location.assign(currentUrl.toString());
+    window.location.assign(`./now-playing.html?location=${document.documentElement.dataset.location}`);
   });
-
+  
   requestSongsDivElement.addEventListener("click", () => {
-    const currentUrl = new URL(window.location.href);
-    const newPath = currentUrl.pathname.includes("docs")
-      ? `/docs/request-songs.html`
-      : `/Swing-Manager/request-songs.html`;
-    currentUrl.pathname = newPath;
-
-    window.location.assign(currentUrl.toString());
+    window.location.assign(`./request-songs.html?location=${document.documentElement.dataset.location}`);
   });
 
   // Highlights which location they are in

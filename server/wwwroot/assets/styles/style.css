@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--location-primary);
+  --color-primary-light: var(--location-primary-light);
+  --color-primary-dark: var(--location-primary-dark);
+}
+
+:root {
+  --location-primary: rgb(13, 48, 20);
+  --location-primary-light: color-mix(
+    in srgb,
+    var(--location-primary),
+    white 20%
+  );
+  --location-primary-dark: color-mix(
+    in srgb,
+    var(--location-primary),
+    black 20%
+  );
+  font-family: "Rye", serif;
+  h1 {
+    letter-spacing: 0.1em;
+  }
+  background-color: var(--bg-gray-100);
+}
+
+[data-location="The-Barn"] {
+  --location-primary: rgb(70, 10, 13);
+  --location-primary-light: color-mix(
+    in srgb,
+    var(--location-primary),
+    white 20%
+  );
+  --location-primary-dark: color-mix(
+    in srgb,
+    var(--location-primary),
+    black 20%
+  );
+}
+
+[data-location="Snow-College"] {
+  --location-primary: rgb(10, 21, 70);
+  --location-primary-light: color-mix(
+    in srgb,
+    var(--location-primary),
+    white 20%
+  );
+  --location-primary-dark: color-mix(
+    in srgb,
+    var(--location-primary),
+    black 20%
+  );
+}
